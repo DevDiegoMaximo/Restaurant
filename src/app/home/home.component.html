@@ -1,6 +1,8 @@
+<app-search></app-search>
+<app-tags></app-tags>
 <ul fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-around center">
   <li *ngFor="let food of foods">
-    <a>
+    <a routerLink="/food/{{ food.id }}">
       <img src="{{ food.imageUrl }}" />
 
       <div class="content">
@@ -30,11 +32,17 @@
             <span *ngFor="let origin of food.origins">{{ origin }}</span>
           </div>
 
-          <div class="cook-time">
-            <span><mat-icon>av_timer</mat-icon> {{ food.cookTime }}</span>
+          <div
+            [ngClass]="{ cookTimeFavorite: food.favorite }"
+            class="cook-time"
+          >
+            <span
+              ><mat-icon class="clock">av_timer</mat-icon>
+              {{ food.cookTime }}</span
+            >
           </div>
         </div>
-        <div class="price">
+        <div [ngClass]="{ price_favorite: food.favorite }" class="price">
           <span>{{ food.price | currency }}</span>
         </div>
       </div>

@@ -7,8 +7,8 @@ ul {
   padding: 0;
 }
 
-li a {
-  height: 25rem;
+ul li a {
+  height: 23.5rem;
   width: 20rem;
   border: 1px solid whitesmoke;
   border-radius: 1rem;
@@ -86,13 +86,23 @@ li:hover {
   color: black;
 }
 
-.cook-time-favorite {
-  font-size: 0.6rem;
-  flex: 3;
-  text-align: right;
-  color: black;
+.cookTimeFavorite {
+  position: relative;
+  bottom: 24px;
 }
 .price {
   color: #414141;
   margin-top: 0.7rem;
+}
+
+.price_favorite {
+  color: #414141;
+  margin-top: 0.7rem;
+  position: relative;
+  bottom: 25px;
+}
+
+.clock {
+  position: relative;
+  top: 6px;
 }

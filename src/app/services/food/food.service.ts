@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Food } from 'src/app/shared/models/food';
+import { Tag } from 'src/app/shared/models/Tag';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +19,7 @@ export class FoodService {
         origins: ['México'],
         stars: 4,
         imageUrl: '/assets/images/foods/food-6.jpg',
-        tags: ['Comida Saudável'],
+        tags: ['ComidaSaudável'],
       },
 
       {
@@ -27,10 +28,10 @@ export class FoodService {
         price: 20,
         cookTime: '20-30',
         favorite: true,
-        origins: ['França'],
+        origins: ['Brasil'],
         stars: 3.5,
         imageUrl: '/assets/images/foods/food-5.jpg',
-        tags: ['Comida Saudável'],
+        tags: ['ComidaSaudável'],
       },
 
       {
@@ -42,7 +43,7 @@ export class FoodService {
         origins: ['Itália'],
         stars: 4,
         imageUrl: '/assets/images/foods/food-2.jpg',
-        tags: ['Comida Italiana', 'Massas'],
+        tags: ['ComidaItaliana', 'Massas'],
       },
 
       {
@@ -54,7 +55,7 @@ export class FoodService {
         origins: ['Estados Unidos'],
         stars: 3.7,
         imageUrl: '/assets/images/foods/food-3.jpg',
-        tags: ['Fast-Food', 'Frituras'],
+        tags: ['FastFood', 'Frituras'],
       },
 
       {
@@ -66,20 +67,48 @@ export class FoodService {
         origins: ['Bélgica'],
         stars: 5,
         imageUrl: '/assets/images/foods/food-4.jpg',
-        tags: ['Frituras', 'Porções', ' Fast-Food'],
+        tags: ['Frituras', 'Porções', 'FastFood'],
       },
 
       {
         id: 6,
         name: 'Café',
         price: 7,
-        cookTime: '05',
+        cookTime: '03-05',
         favorite: true,
         origins: ['Brasil'],
-        stars: 4,
+        stars: 5,
         imageUrl: '/assets/images/foods/food-1.jpg',
-        tags: ['Bebidas Quentes'],
+        tags: ['BebidasQuentes'],
       },
     ];
+  }
+
+  getAllFoodsByTag(tag: string): Food[] {
+    return tag == 'Todos'
+      ? this.getAll()
+      : this.getAll().filter((food) => food.tags?.includes(tag));
+  }
+
+  getAllTags(): Tag[] {
+    return [
+      { name: 'Todos', count: 9 },
+      { name: 'BebidasQuentes', count: 1 },
+      { name: 'Frituras', count: 2 },
+      { name: 'Porções', count: 1 },
+      { name: 'ComidaItaliana', count: 1 },
+      { name: 'ComidaSaudável', count: 2 },
+      { name: 'FastFood', count: 2 },
+    ];
+  }
+
+  getAllFoodsBySearchTerm(searchTerm: string): Food[] {
+    return this.getAll().filter((food) =>
+      food.name.toLocaleLowerCase().includes(searchTerm.toLocaleLowerCase())
+    );
+  }
+
+  getFoodById(id: number): Food {
+    return this.getAll().find((food) => food.id == id)!;
   }
 }
