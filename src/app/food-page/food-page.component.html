@@ -1,4 +1,10 @@
-<div class="container">
+<app-not-found
+  [visible]="!food"
+  notFoundMessage="Produto Não Encontrado!"
+  resetLinkText="Voltar para a Página Principal!"
+></app-not-found>
+
+<div *ngIf="food" class="container">
   <img [src]="food.imageUrl" [alt]="food.name" />
 
   <div class="details">
@@ -33,7 +39,7 @@
 
     <div class="cook-time">
       <span>
-        Tempo de Preparo: <strong>{{ food.cookTime }}</strong>
+        Tempo de Preparo: <strong>{{ food.cookTime }} min</strong>
       </span>
     </div>
 
@@ -41,6 +47,8 @@
       <span>R{{ food.price | currency }}</span>
     </div>
 
-    <button><mat-icon>add_shopping_cart</mat-icon></button>
+    <button (click)="addToCart()">
+      <mat-icon>add_shopping_cart</mat-icon>
+    </button>
   </div>
 </div>

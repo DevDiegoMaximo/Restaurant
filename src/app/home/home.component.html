@@ -1,5 +1,9 @@
 <app-search></app-search>
 <app-tags></app-tags>
+<app-not-found
+  [visible]="!foods || foods.length <= 0"
+  resetLinkText="Fazer uma Nova Busca!"
+></app-not-found>
 <ul fxLayout.lt-sm="column" fxLayoutAlign.lt-sm="space-around center">
   <li *ngFor="let food of foods">
     <a routerLink="/food/{{ food.id }}">
@@ -43,7 +47,7 @@
           </div>
         </div>
         <div [ngClass]="{ price_favorite: food.favorite }" class="price">
-          <span>{{ food.price | currency }}</span>
+          <span>R{{ food.price | currency }}</span>
         </div>
       </div>
     </a>
