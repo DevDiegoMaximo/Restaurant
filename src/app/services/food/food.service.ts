@@ -18,7 +18,8 @@ export class FoodService {
         favorite: false,
         origins: ['México'],
         stars: 4,
-        imageUrl: './assets/images/foods/food-6.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-6.jpg',
         tags: ['ComidaSaudável'],
       },
 
@@ -30,7 +31,8 @@ export class FoodService {
         favorite: true,
         origins: ['Brasil'],
         stars: 3.5,
-        imageUrl: './assets/images/foods/food-5.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-5.jpg',
         tags: ['ComidaSaudável'],
       },
 
@@ -42,7 +44,8 @@ export class FoodService {
         favorite: false,
         origins: ['Itália'],
         stars: 4,
-        imageUrl: './assets/images/foods/food-2.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-2.jpg',
         tags: ['ComidaItaliana', 'Massas'],
       },
 
@@ -54,7 +57,8 @@ export class FoodService {
         favorite: true,
         origins: ['Estados Unidos'],
         stars: 3.7,
-        imageUrl: './assets/images/foods/food-3.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-3.jpg',
         tags: ['FastFood', 'Frituras'],
       },
 
@@ -66,7 +70,8 @@ export class FoodService {
         favorite: false,
         origins: ['Bélgica'],
         stars: 5,
-        imageUrl: './assets/images/foods/food-4.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-4.jpg',
         tags: ['Frituras', 'Porções', 'FastFood'],
       },
 
@@ -78,7 +83,8 @@ export class FoodService {
         favorite: true,
         origins: ['Brasil'],
         stars: 5,
-        imageUrl: './assets/images/foods/food-1.jpg',
+        imageUrl:
+          'https://my-restaurant-app-angular.s3.amazonaws.com/images/food-1.jpg',
         tags: ['BebidasQuentes'],
       },
     ];
